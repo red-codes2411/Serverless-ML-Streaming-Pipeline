@@ -16,6 +16,12 @@ An event-driven, infrastructure-as-code (IaC) project that streams mock transact
 * **Local Environment:** Docker, Kubernetes (Local testing)
 * **Frontend/Producer:** Python, Streamlit, Boto3
 
+## Outputs
+<img width="642" height="662" alt="Screenshot 2026-06-15 030445" src="https://github.com/user-attachments/assets/301f3f43-1bad-43af-ac37-cfb0cb6cddc0" />
+<img width="592" height="667" alt="Screenshot 2026-06-15 030716" src="https://github.com/user-attachments/assets/ee5883b7-837a-4575-bdaa-cbd286882398" />
+<img width="677" height="677" alt="Screenshot 2026-06-15 030732" src="https://github.com/user-attachments/assets/d3481a31-9731-4df0-b662-59d1bb2cf469" />
+
+
 ## 🚀 How to Run Locally
 
 ### 1. Provision the AWS Infrastructure
