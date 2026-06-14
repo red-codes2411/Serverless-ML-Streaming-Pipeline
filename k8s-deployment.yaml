@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ml-frontend-deployment-dhanu
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ml-frontend-dhanu
+  template:
+    metadata:
+      labels:
+        app: ml-frontend-dhanu
+    spec:
+      containers:
+      - name: ml-frontend-dhanu
+        image: my-streamlit-producer-dhanu:latest
+        imagePullPolicy: Never 
+        ports:
+        - containerPort: 8501
+        env:
+        # Pass your local AWS credentials to the container
+        - name: AWS_ACCESS_KEY_ID
+          value: "YOUR_AWS_ACCESS_KEY"
+          value: "YOUR_AWS_SECRET_KEY"
+        - name: AWS_DEFAULT_REGION
+          value: "region" # Configured for Mumbai Region
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ml-frontend-service-dhanu
+spec:
+  type: NodePort 
+  selector:
+    app: ml-frontend-dhanu
+  ports:
+    - protocol: TCP
+      port: 8501
+      targetPort: 8501
+      nodePort: 30501
